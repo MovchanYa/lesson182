@@ -1,7 +1,16 @@
 import { defineConfig } from "cypress";
 
+module.exports = defineConfig({
+  reporter: "mochawesome",
+
+  e2e: {
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+  },
+});
+
 export default defineConfig({
-  allowCypressEnv: false,
   watchForFileChanges: false,
 
   e2e: {
@@ -9,8 +18,6 @@ export default defineConfig({
     viewportWidth: 1000,
     viewportHeight: 720,
 
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
+    setupNodeEvents(on, config) {},
   },
 });
