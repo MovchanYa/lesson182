@@ -7,11 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: install node
+      - name: Install node
         uses: actions/setup-node@v4
         with:
           node-version: "22.x"
-      - name: npm install
+      - name: Npm install
         run: npm install
       - name: run tests
         run: npm run cy:run
