@@ -7,11 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Install node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22.x"
-      - name: Npm install
+      - name: Build Docker Image
+        run: docker build -t my-cypress-app .
+      - name: NPM Install
         run: npm install
       - name: run tests
-        run: npm run cy:run
+        run: npx cypress run --browser firefox --config-file cypress.prod.cjs --spec "cypress/e2e/lesson19.cy.js,cypress/e2e/lesson20.cy.js"
