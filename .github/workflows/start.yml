@@ -9,5 +9,7 @@ jobs:
       - uses: actions/checkout@v6
       - name: Build Docker Image
         run: docker build -t my-cypress-app .
+      - name: NPM Install
+        run: npm install
       - name: run tests
         run: npx cypress run --browser firefox --config-file cypress.prod.cjs
