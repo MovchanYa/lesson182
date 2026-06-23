@@ -116,4 +116,19 @@ export default class extends basePage {
     const uniqueNumber = Date.now();
     return `a+${uniqueNumber}@koma.com`;
   }
+
+  register() {
+    const uniqueEmail = this.generateEmail();
+    const password = Cypress.env("userPassword");
+
+    this.navigate();
+    this.regModal();
+    this.nameField.type("John");
+    this.lastNameField.type("Doe");
+    this.emailField.type(uniqueEmail);
+    this.passwordField.type(password);
+    this.repeatPasswordField.type(password);
+    this.activeRegButton.click();
+    return uniqueEmail;
+  }
 }
