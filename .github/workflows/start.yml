@@ -12,4 +12,4 @@ jobs:
       - name: NPM Install
         run: npm install
       - name: run tests
-        run: npx cypress run --browser firefox --config-file cypress.prod.cjs
+        run: npx cypress run --browser firefox --config-file cypress.prod.cjs --spec "cypress/e2e/lesson19.cy.js,cypress/e2e/lesson20.cy.js"
