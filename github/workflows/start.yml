@@ -1,6 +1,6 @@
 name: Lesson 31
 run-name: Tests run
-on: workflow_dispatch
+on: push
 jobs:
   firstJob:
     name: "Run tests"
